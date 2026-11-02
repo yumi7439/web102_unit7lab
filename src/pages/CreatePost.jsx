@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import './CreatePost.css'
-
+import { supabase } from '../client'
 const CreatePost = () => {
+    const createPost = async (event) => {event.preventDefault()}
+
 
     const [post, setPost] = useState({title: "", author: "", description: ""})
-
+        
     const handleChange = (event) => {
         const {name, value} = event.target
         setPost( (prev) => {
